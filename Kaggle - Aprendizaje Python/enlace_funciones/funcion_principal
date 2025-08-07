@@ -1,0 +1,15 @@
+from  mis_librerias_frank.funcion_1 import cuenta_separa
+
+def unir2strings(text1, text2):
+    texto_unido = text1 + " " + text2
+    lista, cantidad = cuenta_separa(texto_unido)
+    print(texto_unido)
+    print(lista)
+    print(cantidad)
+
+    return texto_unido, lista, cantidad
+
+text1 = "A la Teniente Rada le gusta"
+text2 = "El queso de puerco"
+
+unir2strings(text1, text2)
