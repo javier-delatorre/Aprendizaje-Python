@@ -1,0 +1,14 @@
+
+# For a list of common symbols you can use to construct conditions, check out the chart below.
+Symbol	Meaning
+==	equals
+!=	does not equal
+<	less than
+<=	less than or equal to
+>	greater than
+>=	greater than or equal to
+
+# Important Note: When you check two values are equal, make sure you use the == sign, and not the = sign.
+
+var_one==1 checks if the value of var_one is 1, but
+var_one=1 sets the value of var_one to 1.
