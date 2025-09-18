@@ -3,10 +3,26 @@
         <title>Mi primer mapa con Leaflet</title>
         <style>
             @import url("https://unpkg.com/leaflet@1.9.4/dist/leaflet.css");
+            #mapaleaflet { 
+                margin: 0 auto;
+                width: 50%;
+                min-height: 400px;
+                max-width: 500px;
+                height: 100%; 
+            }
         </style>
     </head>
     <body>
-        Hola mundo con un mapa de Leaflet
+        Q pasa toñillo aqui va a ir el mapa, cada vez mas pelón
+        <div id="mapaleaflet"></div>
+        <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin="">
+    </script>
+    <script>
+        var map = L.map('mapaleaflet').setView([20.33, -103.66], 13);
+    </script>
     </body>
 
 </html>
