@@ -1,0 +1,21 @@
+
+#Ejemplo de como generar un mapa mediante folium en python
+
+import folium
+
+def generar_mapa():
+        latitud =20.671661421692075
+        longitud=-103.34432713013703
+        
+        mapa = folium.Map(
+                location=[latitud,longitud], 
+                zoom_start = 40)
+        
+        folium.Marker(
+                location =[latitud,longitud],
+                popup="Aqui Toy"
+                ).add_to(mapa)
+
+        mapa.save("mapa.html")
+
+generar_mapa()
