@@ -1,28 +1,37 @@
 <html>
-    <head>
-        <title>Mi primer mapa con Leaflet</title>
-        <style>
-            @import url("https://unpkg.com/leaflet@1.9.4/dist/leaflet.css");
-            #mapaleaflet { 
-                margin: 0 auto;
-                width: 50%;
-                min-height: 400px;
-                max-width: 500px;
-                height: 100%; 
-            }
-        </style>
-    </head>
-    <body>
-        Q pasa toñillo aqui va a ir el mapa, cada vez mas pelón
-        <div id="mapaleaflet"></div>
-        <!-- Make sure you put this AFTER Leaflet's CSS -->
- <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-     crossorigin="">
-    </script>
+
+<head>
+    <title>Mi primer mapa con Leaflet</title>
+    <style>
+        @import url("https://unpkg.com/leaflet@1.9.4/dist/leaflet.css");
+
+        #mapaleaflet {
+            margin: 0 auto;
+            width: 50%;
+            min-height: 400px;
+            max-width: 500px;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    Q pasa toñillo aqui va a ir el mapa, cada vez mas pelón
+    <div id="mapaleaflet"></div>
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="">
+        </script>
     <script>
-        var map = L.map('mapaleaflet').setView([20.33, -103.66], 13);
+        var map = L.map("mapaleaflet").setView([20.6597, -103.3496], 7);
+        L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.{ext}?api_key=948991cd-8319-4f42-a0a2-9e17b2b26b65', {
+            minZoom: 0,
+            maxZoom: 20,
+            attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            ext: 'png'
+        }).addTo(map);
     </script>
-    </body>
+
+</body>
 
 </html>
