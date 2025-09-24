@@ -23,13 +23,25 @@
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="">
         </script>
     <script>
+        // Crear el mapa en el div "mapaleaflet"
         var map = L.map("mapaleaflet").setView([20.6597, -103.3496], 7);
+        // Cargar mapa base
         L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.{ext}?api_key=948991cd-8319-4f42-a0a2-9e17b2b26b65', {
             minZoom: 0,
             maxZoom: 20,
             attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
             ext: 'png'
         }).addTo(map);
+        // Cargar GeoJSON desde carpeta data/
+        fetch("data/Jalisco.geojson")
+            .then(response => response.json())
+            .then(data => {
+                // Agregar al mapa
+                var geojsonLayer = L.geoJSON(data).addTo(map);
+
+                // Centrar mapa automáticamente en el GeoJSON
+                map.fitBounds(geojsonLayer.getBounds());
+            });
     </script>
 
 </body>
