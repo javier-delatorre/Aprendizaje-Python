@@ -33,9 +33,17 @@
             ext: 'png'
         }).addTo(map);
         // Cargar GeoJSON desde carpeta data/
-        fetch("data/Jalisco.geojson")
+        fetch("./data/Jalisco.geojson")
             .then(response => response.json())
             .then(data => {
+                const JaliscoLayer = L.geoJSON(data, {
+                    style: {
+                        color: "red",       // color de línea
+                        weight: 2,          // grosor
+                        fillColor: "orange",// color de relleno
+                        fillOpacity: 0.2    // transparencia
+                    }
+                }).addTo(map);
                 // Agregar al mapa
                 var geojsonLayer = L.geoJSON(data).addTo(map);
 
