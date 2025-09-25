@@ -32,23 +32,23 @@
             attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
             ext: 'png'
         }).addTo(map);
-        // Cargar GeoJSON desde carpeta data/
+        // Cargar GeoJSON del estado de Jalisco desde carpeta data/
         fetch("./data/Jalisco.geojson")
             .then(response => response.json())
             .then(data => {
                 const JaliscoLayer = L.geoJSON(data, {
                     style: {
-                        color: "red",       // color de línea
-                        weight: 2,          // grosor
-                        fillColor: "orange",// color de relleno
-                        fillOpacity: 0.2    // transparencia
+                        color: "#7986CB",       // color de línea
+                        weight: 10,          // grosor
+                        fillColor: "#F54927",// color de relleno
+                        fillOpacity: 0,   // transparencia
                     }
                 }).addTo(map);
                 // Agregar al mapa
                 var geojsonLayer = L.geoJSON(data).addTo(map);
 
                 // Centrar mapa automáticamente en el GeoJSON
-                map.fitBounds(geojsonLayer.getBounds());
+                map.fitBounds(JaliscoLayer.getBounds());
             });
     </script>
 
